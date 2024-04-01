@@ -30,13 +30,6 @@ export default async function Page({ params }: PageProps) {
 
   return (
     <main className='bg-surface'>
-      <header className='m-auto max-w-[80ch] border-b py-8'>
-        <Link href='/'>
-          <h1 className='text-2xl font-bold tracking-tighter'>
-            ZHANGYU<small>.dev</small>
-          </h1>
-        </Link>
-      </header>
       <div className='m-auto max-w-[80ch] py-20'>
         <header className='mb-24 space-y-8'>
           <small>{dayjs(createdAt).format('MMMM D, YYYY')}</small>

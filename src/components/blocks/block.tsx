@@ -56,10 +56,11 @@ export const Block = (props: React.HTMLAttributes<HTMLDivElement>) => {
       style={{
         ...style,
         order: needChangeStyle ? 0 : 1,
-        opacity: needChangeStyle ? 1 : 0.3,
+        opacity: needChangeStyle ? 1 : 0.8,
+        filter: needChangeStyle ? 'blur(0)' : 'blur(3px)',
       }}
       className={twMerge(
-        'relative rounded-3xl border p-4 text-sm shadow-bento transition-opacity duration-700',
+        'relative rounded-3xl border p-4 text-sm shadow-bento transition-[filter] duration-700',
         className,
       )}
     >

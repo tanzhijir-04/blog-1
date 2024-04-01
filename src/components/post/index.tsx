@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Link from 'next/link'
 
 import { IconHash } from '@tabler/icons-react'
@@ -13,7 +12,7 @@ interface PostProps {
 
 export const Post = (props: PostProps) => {
   const { node } = props
-  const { labels, author, number } = node
+  const { labels, number } = node
   const firstLabel = labels.nodes[0]
 
   return (
@@ -50,15 +49,7 @@ export const Post = (props: PostProps) => {
         </p>
         {/* TODO Open AI*/}
         <p className='overflow-hidden text-pretty' />
-        <p className='flex items-center gap-2'>
-          <Image
-            className='rounded-full shadow-sm'
-            src={author!.avatarUrl}
-            alt={`${author!.login} avatar`}
-            width={20}
-            height={20}
-          />
-          <span className='flex-1'>{author!.login}</span>
+        <p className='flex justify-end'>
           <Link
             className='translate-y-2 items-center rounded-full border bg-surface px-2.5 py-1.5 font-semibold opacity-0 ring-surface-3 transition-all duration-700 ease-spring hover:scale-105 hover:border-transparent hover:ring-4 group-hover:translate-y-0 group-hover:opacity-100'
             href={`/posts/${number}`}
