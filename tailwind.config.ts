@@ -1,5 +1,7 @@
 import typography from '@tailwindcss/typography'
 import plugin from 'tailwindcss/plugin'
+import tailwindAnimate from 'tailwindcss-animate'
+import reactAriaComponent from 'tailwindcss-react-aria-components'
 
 import type { Config } from 'tailwindcss'
 
@@ -57,6 +59,8 @@ const config: Config = {
   },
   plugins: [
     typography,
+    reactAriaComponent,
+    tailwindAnimate,
     plugin(({ matchUtilities, theme }) => {
       matchUtilities(
         {

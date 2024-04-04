@@ -4,5 +4,5 @@ export default {
   jsxSingleQuote: true,
   arrowParens: 'avoid',
   plugins: ['prettier-plugin-tailwindcss'],
-  tailwindFunctions: ['clsx', 'tw'],
+  tailwindFunctions: ['clsx', 'tw', 'withTw'],
 }

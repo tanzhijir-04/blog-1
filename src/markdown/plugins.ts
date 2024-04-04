@@ -50,6 +50,9 @@ export const rehypeGithubAlert: Plugin = () => tree =>
         }
         const text = firstParagraph.children[0] as Text
         const value = text.value
+        if (!value) {
+          return
+        }
         const matches = value.match(/\[!(.+)]/)
         if (matches) {
           const type = matches[1].toLowerCase()

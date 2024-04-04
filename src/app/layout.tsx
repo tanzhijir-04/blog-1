@@ -1,6 +1,8 @@
 import { clsx } from 'clsx'
 import { Nunito, Handlee, Sorts_Mill_Goudy } from 'next/font/google'
 
+import { Provider } from '@/provider'
+
 import type { Metadata } from 'next'
 
 import './globals.css'
@@ -39,7 +41,7 @@ export default function RootLayout({ children }) {
     >
       <body className='font-primary text-color-1'>
         <div className='fixed inset-0 bottom-1/4 -z-10 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]' />
-        {children}
+        <Provider>{children}</Provider>
       </body>
     </html>
   )

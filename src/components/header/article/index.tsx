@@ -1,4 +1,8 @@
+'use client'
+
 import Link from 'next/link'
+
+import { FontToggle } from './font-toggle'
 
 export const Header = () => (
   <header className='grid w-full grid-cols-[1fr_minmax(auto,80ch)_1fr] items-center border-b bg-surface px-16 py-8'>
@@ -15,5 +19,8 @@ export const Header = () => (
         Posts
       </Link>
     </nav>
+    <div className='flex items-center justify-end'>
+      <FontToggle />
+    </div>
   </header>
 )
