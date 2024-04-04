@@ -2,6 +2,7 @@ import optimizeLocales from '@react-aria/optimize-locales-plugin'
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
+  distDir: 'dist',
   images: {
     unoptimized: true,
   },
