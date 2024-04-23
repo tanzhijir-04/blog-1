@@ -53,7 +53,7 @@ export const ExploreMore = (props: ExploreMoreProps) => {
         }}
       />
       <Link
-        className='absolute inset-0 z-10 flex items-center justify-center gap-2 text-2xl font-semibold text-white mix-blend-difference'
+        className='absolute inset-0 z-10 flex items-center justify-center gap-2 text-lg font-semibold text-white mix-blend-difference lg:text-2xl'
         href={href}
       >
         Explore More

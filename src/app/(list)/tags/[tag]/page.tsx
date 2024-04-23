@@ -36,7 +36,7 @@ export default async function Page({ params }: PageProps) {
 
   return (
     <>
-      <h1 className='text-4xl'>
+      <h1 className='px-4 text-center text-4xl'>
         All about <span className='text-5xl italic'>&quot;{label}&quot;</span>
       </h1>
       <Grid>

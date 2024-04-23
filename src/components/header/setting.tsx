@@ -14,7 +14,7 @@ export const Setting = () => {
   return (
     <Link
       className={clsx(
-        'justify-self-end rounded-full bg-surface-2 p-1 shadow-inner transition-all',
+        'justify-self-end rounded-full bg-surface-2 p-1 shadow-inner transition-all max-sm:hidden',
       )}
       href='/setting'
     >

@@ -13,9 +13,6 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      screens: {
-        md: '820px',
-      },
       colors: {
         brand: 'var(--brand)',
         'color-1': 'var(--text-1)',

@@ -18,11 +18,11 @@ export const Post = (props: PostProps) => {
   return (
     <Block
       data-type='posts'
-      className='group grid grid-rows-[1fr_auto_2fr_auto] bg-gradient-to-b from-surface-1 to-white'
+      className='group grid grid-rows-[1fr_auto_2fr_auto] bg-gradient-to-b from-surface-1 to-white max-md:row-span-2 max-sm:col-span-2 max-sm:row-span-1'
     >
       <div className='row-span-4 grid grid-rows-subgrid gap-2'>
         <Link
-          className='relative flex items-center text-balance text-xl font-bold'
+          className='relative flex items-center text-balance text-lg font-bold md:text-base lg:text-lg xl:text-xl'
           href={`/posts/${number}`}
         >
           <h2>
@@ -35,7 +35,7 @@ export const Post = (props: PostProps) => {
             )}
           </h2>
         </Link>
-        <p className='mt-2 flex items-center gap-1 text-color-2'>
+        <p className='mt-2 flex flex-wrap items-center gap-1 text-color-2'>
           {labels.nodes.map(node => (
             <Link
               key={node.id}

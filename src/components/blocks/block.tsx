@@ -31,7 +31,7 @@ export const Block = (props: React.HTMLAttributes<HTMLDivElement>) => {
         filter: needChangeStyle ? 'blur(0)' : 'blur(3px)',
       }}
       className={twMerge(
-        'relative rounded-3xl border p-4 text-sm shadow-bento transition-[filter] duration-700',
+        'relative rounded-xl border p-2.5 text-sm shadow-bento transition-[filter] duration-700 lg:rounded-2xl lg:p-4 xl:rounded-3xl',
         className,
       )}
     >

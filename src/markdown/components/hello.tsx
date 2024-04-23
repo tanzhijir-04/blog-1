@@ -1,6 +1,6 @@
 import { tw } from 'tw-styled'
 
-const Message = tw.span`absolute -top-5 left-1/2 inline-flex h-11 items-center whitespace-nowrap rounded-[1.33rem] bg-[#30db5b] text-xl before:absolute before:content-["_"] after:absolute after:content-["_"]`
+const Message = tw.span`absolute -top-5 inline-flex h-11 items-center whitespace-nowrap rounded-[1.33rem] bg-[#30db5b] text-xl before:absolute before:content-["_"] after:absolute after:content-["_"] max-md:left-32 max-sm:scale-90 md:left-[60%] md:scale-110`
 
 const MessageLoadingDot = tw.i`h-3 w-3 animate-pulse rounded-full bg-gray-50`
 const Hello = ({ children }) => {
@@ -9,7 +9,7 @@ const Hello = ({ children }) => {
   const text = children.replace(regex, '')
   return (
     <>
-      <span className='animation-hello -mt-12 ml-12 inline-block text-6xl xl:text-8xl'>
+      <span className='animation-hello -mt-12 ml-12 inline-block text-5xl md:text-6xl xl:text-8xl'>
         👋
       </span>
       <Message className='animation-fade-out gap-2 px-4 !animation-delay-[3s] before:-left-0.5 before:bottom-0 before:h-4 before:w-4 before:rounded-full before:bg-inherit after:-bottom-1.5 after:-left-2.5 after:h-2 after:w-2 after:rounded-full after:bg-inherit'>
