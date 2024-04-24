@@ -51,7 +51,7 @@ export const Post = (props: PostProps) => {
         <p className='overflow-hidden text-pretty' />
         <p className='flex justify-end'>
           <Link
-            className='translate-y-2 items-center rounded-full border bg-surface px-2.5 py-1.5 font-semibold opacity-0 ring-surface-3 transition-all duration-700 ease-spring hover:scale-105 hover:border-transparent hover:ring-4 group-hover:translate-y-0 group-hover:opacity-100'
+            className='translate-y-2 items-center rounded-full border bg-surface px-2.5 py-1.5 font-semibold opacity-0 ring-surface-3 transition-all duration-700 ease-out hover:scale-105 hover:border-transparent hover:ring-4 group-hover:translate-y-0 group-hover:opacity-100'
             href={`/posts/${number}`}
           >
             Read more

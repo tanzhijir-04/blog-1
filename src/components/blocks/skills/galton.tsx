@@ -102,6 +102,7 @@ export const Galton = memo<GaltonProps>(props => {
         img.style.height = `${imgWidth}px`
         img.style.objectFit = 'contain'
         img.draggable = false
+        img.alt = 'skill-img'
 
         img.src = image.value
         ref.current?.appendChild(container)

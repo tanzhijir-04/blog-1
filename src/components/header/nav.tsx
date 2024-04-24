@@ -52,7 +52,7 @@ export const Nav = () => {
     <nav className='relative justify-self-center rounded-full bg-surface-2 p-1.5 shadow-inner'>
       <div
         className={clsx(
-          'absolute inset-y-1.5 left-1.5 rounded-full bg-surface shadow-sm transition-all duration-1000 ease-spring',
+          'absolute inset-y-1.5 left-1.5 rounded-full bg-surface shadow-sm transition-all duration-1000 ease-out',
           hidden ? 'opacity-0' : 'opacity-100',
         )}
         style={{
@@ -68,12 +68,14 @@ export const Nav = () => {
             <li
               key={`${name}-${index}`}
               className={clsx(
-                'px-4 py-1 transition-colors duration-1000 ease-spring',
+                'px-4 py-1 transition-colors duration-1000 ease-out',
                 tab === currentSelected ? 'text-brand' : 'text-color-4',
               )}
               data-name={tab}
             >
-              <Link href={`/${linkUrl}`}>{name}</Link>
+              <Link prefetch href={`/${linkUrl}`}>
+                {name}
+              </Link>
             </li>
           )
         })}

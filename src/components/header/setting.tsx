@@ -20,7 +20,7 @@ export const Setting = () => {
     >
       <IconSettings
         className={clsx(
-          'size-8 rounded-full p-1.5 transition-all duration-1000 ease-spring',
+          'size-8 rounded-full p-1.5 transition-all duration-1000 ease-out',
           tab === 'setting'
             ? 'bg-surface text-brand shadow-sm'
             : 'text-color-3',

@@ -71,6 +71,38 @@ export default function RootLayout({ children }) {
       lang='en'
       className={clsx(sans.variable, serif.variable, handwriting.variable)}
     >
+      <head>
+        <link
+          rel='icon'
+          type='image/png'
+          sizes='32x32'
+          href='/icon/favicon-32x32.png'
+        />
+        <link
+          rel='icon'
+          type='image/png'
+          sizes='16x16'
+          href='/icon/favicon-16x16.png'
+        />
+        <link
+          rel='apple-touch-icon'
+          sizes='180x180'
+          href='/icon/apple-touch-icon.png'
+        />
+        <link rel='manifest' href='/site.webmanifest' />
+        <link
+          rel='icon'
+          type='image/png'
+          sizes='192x192'
+          href='/icon/android-chrome-192x192.png'
+        />
+        <link
+          rel='icon'
+          type='image/png'
+          sizes='512x512'
+          href='/icon/android-chrome-512x512.png'
+        />
+      </head>
       <body className='font-primary text-color-1'>
         <div className='fixed inset-0 bottom-1/4 -z-10 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]' />
         <Provider>{children}</Provider>

@@ -28,9 +28,6 @@ const config: Config = {
       boxShadow: {
         bento: '0 2px 4px rgba(0,0,0,.04)',
       },
-      transitionTimingFunction: {
-        spring: 'var(--spring-easing,ease-out)',
-      },
       backgroundImage: ({ theme }) => ({
         paper: `linear-gradient(90deg, transparent 0%, transparent 5%, ${theme('colors.orange.600')} 5%, ${theme('colors.orange.600')} calc(5% + 2px), transparent calc(5% + 2px), transparent 100%), linear-gradient(180deg, white 56px, transparent 56px), repeating-linear-gradient(180deg, ${theme('colors.sky.500')} 0px, ${theme('colors.sky.500')} 2px, transparent 2px, transparent 32px), linear-gradient(white,white);`,
       }),
