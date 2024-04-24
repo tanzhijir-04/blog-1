@@ -72,12 +72,6 @@ export const queryPinnedItems = cache(() =>
 
 export const queryAllLabels = cache(() => client.queryLabels())
 
-export const queryRecentPosts = cache(() =>
-  client.search({
-    first: 5,
-  }),
-)
-
 export const queryAllPosts = cache(() => client.search())
 
 export const queryByLabel = cache((label: string) => client.search({ label }))

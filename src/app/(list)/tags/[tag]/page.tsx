@@ -2,6 +2,10 @@ import { Grid } from '@/components/grid'
 import { Post } from '@/components/post'
 import { queryAllLabels, queryByLabel } from '@/service'
 
+interface PageProps {
+  params: { tag: string }
+}
+
 export async function generateStaticParams() {
   const { repository } = await queryAllLabels()
   const {
@@ -11,9 +15,11 @@ export async function generateStaticParams() {
   return nodes.map(node => ({ tag: encodeURIComponent(node.name) }))
 }
 
-interface PageProps {
-  params: { tag: string }
+export function generateMetadata({ params }: PageProps) {
+  const { tag } = params
+  return { title: `${tag} Articles` }
 }
+
 export default async function Page({ params }: PageProps) {
   const { tag } = params
 

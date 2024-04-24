@@ -1,17 +1,19 @@
 import { Block } from '@/components/blocks/block'
 import { Post } from '@/components/post'
-import { queryRecentPosts } from '@/service'
+import { queryAllPosts } from '@/service'
 
 import { ExploreMore } from './explore-more'
 
 export const Posts = async () => {
-  const recentDiscussions = await queryRecentPosts()
+  const discussions = await queryAllPosts()
   const {
     search: { nodes },
-  } = recentDiscussions
+  } = discussions
+
+  const recentDiscussions = nodes.slice(0, 5)
   return (
     <>
-      {nodes.map(node => (
+      {recentDiscussions.map(node => (
         <Post key={node.number} node={node} />
       ))}
       <Block

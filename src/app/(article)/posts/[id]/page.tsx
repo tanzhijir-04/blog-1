@@ -16,6 +16,19 @@ export const generateStaticParams = async () => {
   return nodes.map(node => ({ id: `${node.number}` }))
 }
 
+export const generateMetadata = async ({ params }: PageProps) => {
+  const { id } = params
+
+  const { repository } = await queryByNumber(+id)
+  const { discussion } = repository!
+  const { title } = discussion!
+
+  // TODO description AI generated, og, twitter
+  return {
+    title,
+  }
+}
+
 interface PageProps {
   params: {
     id: string

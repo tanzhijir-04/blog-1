@@ -11,7 +11,6 @@ import {
 import { transformerTwoslash } from '@shikijs/twoslash'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeSlug from 'rehype-slug'
-import remarkCapitalizeHeadings from 'remark-capitalize-headings'
 import remarkDirective from 'remark-directive'
 import remarkGfm from 'remark-gfm'
 import { MDX } from 'rsc-mdx'
@@ -40,12 +39,7 @@ export async function Markdown(props: MarkdownProps) {
         Hello,
         pre,
       })}
-      remarkPlugins={[
-        remarkCapitalizeHeadings,
-        remarkDirective,
-        remarkDirectiveContainer,
-        remarkGfm,
-      ]}
+      remarkPlugins={[remarkDirective, remarkDirectiveContainer, remarkGfm]}
       rehypePlugins={[
         rehypeGithubAlert,
         rehypeSlug,
