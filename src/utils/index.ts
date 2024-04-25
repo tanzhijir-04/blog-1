@@ -6,3 +6,5 @@ export const readingTime = (
   const numberOfWords = textLength / wordsPerCharacter
   return (numberOfWords / averageReadingSpeed).toFixed(1)
 }
+
+export const isServer = () => typeof window === 'undefined'

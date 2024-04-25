@@ -1,10 +1,11 @@
 'use client'
 import { memo, useEffect, useRef, useState } from 'react'
-import { tw } from 'tw-styled'
+
 import { type StaticImageData } from 'next/image'
 
 import { IconRefresh } from '@tabler/icons-react'
 import * as p2 from 'p2-es'
+import { tw } from 'tw-styled'
 
 interface GaltonProps {
   images: StaticImageData[]
