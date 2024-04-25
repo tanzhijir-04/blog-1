@@ -5,6 +5,7 @@ import { Github } from '@/components/blocks/github'
 import { Juejin } from '@/components/blocks/juejin'
 import { Pinned } from '@/components/blocks/pinned'
 import { Posts } from '@/components/blocks/posts'
+import { Resume } from '@/components/blocks/resume'
 import { Skills } from '@/components/blocks/skills'
 import { Tags } from '@/components/blocks/tags'
 import { Grid } from '@/components/grid'
@@ -24,6 +25,7 @@ export default function Layout() {
         <Posts />
         <Github />
         <Juejin />
+        <Resume />
       </Grid>
     </>
   )

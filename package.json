@@ -23,6 +23,7 @@
     "react-dom": "^18",
     "react-markdown-toc": "^1.1.0",
     "tailwind-merge": "^2.3.0",
+    "typed.js": "^2.1.0",
     "use-flip": "^1.0.0"
   },
   "devDependencies": {
