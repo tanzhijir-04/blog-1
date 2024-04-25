@@ -22,6 +22,7 @@ export const Resume = () => (
     </span>
     <Link
       className='flex h-full w-full items-center justify-center text-2xl text-gray-200'
+      aria-label='Go to resume page'
       href='/resume'
     >
       <IconTerminal className='mr-2 size-6 text-green-400' />
