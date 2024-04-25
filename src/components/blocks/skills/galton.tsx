@@ -1,6 +1,6 @@
 'use client'
 import { memo, useEffect, useRef, useState } from 'react'
-
+import { tw } from 'tw-styled'
 import { type StaticImageData } from 'next/image'
 
 import { IconRefresh } from '@tabler/icons-react'
@@ -13,6 +13,8 @@ interface GaltonProps {
 function sleep(ms: number) {
   return new Promise(resolve => setTimeout(resolve, ms))
 }
+
+const Pin = tw.div`absolute h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full border bg-surface-2 shadow-sm`
 
 export const Galton = memo<GaltonProps>(props => {
   const { images } = props
@@ -229,19 +231,19 @@ export const Galton = memo<GaltonProps>(props => {
         ref={ref}
         className='animation-fade-in relative origin-bottom-left opacity-0 sm:max-lg:scale-50 md:max-lg:scale-x-[0.643] md:max-lg:scale-y-[0.635] lg:max-xl:scale-x-[0.786] lg:max-xl:scale-y-[0.784]'
       >
-        <div className='absolute left-[70px] top-10 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full border bg-surface-2 shadow-sm' />
-        <div className='absolute left-[140px] top-10 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full border bg-surface-2 shadow-sm' />
-        <div className='absolute left-[210px] top-10 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full border bg-surface-2 shadow-sm' />
-        <div className='absolute left-[105px] top-28 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full border bg-surface-2 shadow-sm' />
-        <div className='absolute left-[175px] top-28 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full border bg-surface-2 shadow-sm' />
-        <div className='absolute left-[70px] top-48 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full border bg-surface-2 shadow-sm' />
-        <div className='absolute left-[140px] top-48 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full border bg-surface-2 shadow-sm' />
-        <div className='absolute left-[210px] top-48 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full border bg-surface-2 shadow-sm' />
-        <div className='absolute left-[105px] top-72 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full border bg-surface-2 shadow-sm' />
-        <div className='absolute left-[175px] top-72 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full border bg-surface-2 shadow-sm' />
-        <div className='absolute left-[70px] top-96 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full border bg-surface-2 shadow-sm' />
-        <div className='absolute left-[140px] top-96 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full border bg-surface-2 shadow-sm' />
-        <div className='absolute left-[210px] top-96 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full border bg-surface-2 shadow-sm' />
+        <Pin className='left-[70px] top-10' />
+        <Pin className='left-[140px] top-10' />
+        <Pin className='left-[210px] top-10' />
+        <Pin className='left-[105px] top-28' />
+        <Pin className='left-[175px] top-28' />
+        <Pin className='left-[70px] top-48' />
+        <Pin className='left-[140px] top-48' />
+        <Pin className='left-[210px] top-48' />
+        <Pin className='left-[105px] top-72' />
+        <Pin className='left-[175px] top-72' />
+        <Pin className='left-[70px] top-96' />
+        <Pin className='left-[140px] top-96' />
+        <Pin className='left-[210px] top-96' />
       </div>
     </>
   )

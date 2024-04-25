@@ -69,8 +69,9 @@ export const Nav = () => {
               key={`${name}-${index}`}
               className={clsx(
                 'px-4 py-1 transition-colors duration-1000 ease-out',
-                tab === currentSelected ? 'text-brand' : 'text-color-4',
+                tab === currentSelected ? 'text-orange-600' : 'text-color-3',
               )}
+              aria-label={tab}
               data-name={tab}
             >
               <Link prefetch href={`/${linkUrl}`}>

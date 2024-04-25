@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --brand: theme('colors.orange.600');
+  --brand: theme('colors.blue.700');
   --text-1: theme('colors.slate.800');
   --text-2: theme('colors.slate.700');
   --text-3: theme('colors.slate.600');

@@ -26,7 +26,7 @@ export const ExploreMore = (props: ExploreMoreProps) => {
         <MotionWave
           width={280}
           height={280}
-          className='z-0 h-full w-full bg-surface-1'
+          className='z-0 h-full w-full rounded-xl bg-surface-1 lg:rounded-2xl xl:rounded-3xl'
           initialConfig={{
             frequency: 0.4,
             amplitude: 30,

@@ -16,7 +16,7 @@ export const Tags = async () => {
       data-type='tags'
       className='col-span-2 flex flex-col overflow-clip bg-gradient-to-l from-amber-50 to-surface max-lg:row-span-2 sm:col-span-3 md:col-span-2 lg:col-span-4'
     >
-      <h2 className='mb-4 flex items-center gap-4 text-2xl text-brand'>
+      <h2 className='mb-4 flex items-center gap-4 text-2xl text-orange-600'>
         <IconTags />
         Tags
       </h2>

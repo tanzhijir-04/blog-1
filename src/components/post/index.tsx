@@ -23,6 +23,7 @@ export const Post = (props: PostProps) => {
       <div className='row-span-4 grid grid-rows-subgrid gap-2'>
         <Link
           className='relative flex items-center text-balance text-lg font-bold md:text-base lg:text-lg xl:text-xl'
+          aria-label={`Post ${node.title}`}
           href={`/posts/${number}`}
         >
           <h2>
@@ -35,12 +36,13 @@ export const Post = (props: PostProps) => {
             )}
           </h2>
         </Link>
-        <p className='mt-2 flex flex-wrap items-center gap-1 text-color-2'>
+        <p className='mt-2 flex flex-wrap items-center text-color-2'>
           {labels.nodes.map(node => (
             <Link
               key={node.id}
+              aria-label={`Tag ${node.name}`}
               href={`/tags/${node.name}`}
-              className='inline-flex items-center text-xs underline-offset-1 after:content-[",_"] last:after:content-none hover:underline'
+              className='relative inline-flex items-center px-1 text-xs underline-offset-1 before:absolute before:-inset-x-0 before:-inset-y-4 before:content-["_"] after:content-[",_"] first:pl-0 last:after:content-none hover:underline'
             >
               <IconHash className='size-2.5' />
               {node.name}
@@ -51,10 +53,11 @@ export const Post = (props: PostProps) => {
         <p className='overflow-hidden text-pretty' />
         <p className='flex justify-end'>
           <Link
-            className='translate-y-2 items-center rounded-full border bg-surface px-2.5 py-1.5 font-semibold opacity-0 ring-surface-3 transition-all duration-700 ease-out hover:scale-105 hover:border-transparent hover:ring-4 group-hover:translate-y-0 group-hover:opacity-100'
+            className='translate-y-2 items-center rounded-full border bg-surface px-2.5 py-1.5 font-semibold opacity-0 outline-offset-4 ring-surface-3 transition-all duration-700 ease-out hover:scale-105 hover:border-transparent hover:ring-4 group-hover:translate-y-0 group-hover:opacity-100 focus-visible:translate-y-0 focus-visible:opacity-100'
+            aria-label={`Read more about ${node.title}`}
             href={`/posts/${number}`}
           >
-            Read more
+            Read more <span className='sr-only'>about {node.title}</span>
           </Link>
         </p>
       </div>

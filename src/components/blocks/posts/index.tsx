@@ -18,7 +18,8 @@ export const Posts = async () => {
       ))}
       <Block
         data-type='posts'
-        className='flex items-stretch justify-stretch overflow-clip bg-surface max-md:col-span-2'
+        tabIndex={0}
+        className='flex items-stretch justify-stretch overflow-clip bg-surface outline-offset-4 max-md:col-span-2'
       >
         <ExploreMore href='/posts/all' />
       </Block>
