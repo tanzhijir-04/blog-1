@@ -30,12 +30,12 @@ export default function Page() {
           </span>
           <span className='text-end text-gray-500'>⌥⌘1</span>
         </header>
-        <div className='min-h-60 flex-1 overflow-y-auto p-2 text-sm text-gray-200 duration-1000 animate-in fade-in'>
+        <div className='min-h-60 flex-1 overflow-y-auto p-2 text-sm text-gray-200 duration-300 animate-in fade-in'>
           <p className='mb-2'>
             Last login: {dayjs().format('ddd MMM DD HH:mm:ss')} on ttys003
           </p>
           <Typed>
-            <TypedText immediately>whoami</TypedText>
+            <TypedText>whoami</TypedText>
             <TypedContent>
               <p>
                 Hi, this is <strong>ZHANG YU</strong>, in Chinese is{' '}
