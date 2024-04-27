@@ -1,3 +1,4 @@
+import dynamic from 'next/dynamic'
 import { type StaticImageData } from 'next/image'
 
 import cssSvg from '@/images/logo/css.svg'
@@ -19,7 +20,9 @@ import webpackSvg from '@/images/logo/webpack.svg'
 
 import { Block } from '@/components/blocks/block'
 
-import { Galton } from './galton'
+const Galton = dynamic(() => import('./galton').then(module => module.Galton), {
+  ssr: false,
+})
 
 const images: StaticImageData[] = [
   htmlSvg,

@@ -1,13 +1,15 @@
 'use client'
 
-import { useState, lazy, Suspense } from 'react'
+import { useState } from 'react'
 
+import dynamic from 'next/dynamic'
 import Link from 'next/link'
 
 import { IconBeach } from '@tabler/icons-react'
 
-const MotionWave = lazy(() =>
-  import('motion-wave').then(module => ({ default: module.MotionWave })),
+const MotionWave = dynamic(
+  () => import('motion-wave').then(module => module.MotionWave),
+  { ssr: false },
 )
 
 interface ExploreMoreProps {
@@ -22,41 +24,39 @@ export const ExploreMore = (props: ExploreMoreProps) => {
       onMouseEnter={() => setEnter(true)}
       onMouseLeave={() => setEnter(false)}
     >
-      <Suspense>
-        <MotionWave
-          width={280}
-          height={280}
-          className='z-0 h-full w-full rounded-xl bg-surface-1 lg:rounded-2xl xl:rounded-3xl'
-          initialConfig={{
-            frequency: 0.4,
-            amplitude: 30,
-            speed: 4,
-            offset: 50,
-          }}
-          motionConfig={{
-            frequency: {
-              value: 1,
-              duration: 8,
-              loop: true,
-            },
-            amplitude: {
-              value: 60,
-              loop: true,
-            },
-            speed: {
-              value: 6,
-              loopDelay: 1,
-              loop: true,
-            },
-            offset: {
-              value: enter ? -200 : 50,
-              loop: false,
-              duration: 0.5,
-              ease: [0.16, 1, 0.3, 1],
-            },
-          }}
-        />
-      </Suspense>
+      <MotionWave
+        width={280}
+        height={280}
+        className='z-0 h-full w-full rounded-xl bg-surface-1 lg:rounded-2xl xl:rounded-3xl'
+        initialConfig={{
+          frequency: 0.4,
+          amplitude: 30,
+          speed: 4,
+          offset: 50,
+        }}
+        motionConfig={{
+          frequency: {
+            value: 1,
+            duration: 8,
+            loop: true,
+          },
+          amplitude: {
+            value: 60,
+            loop: true,
+          },
+          speed: {
+            value: 6,
+            loopDelay: 1,
+            loop: true,
+          },
+          offset: {
+            value: enter ? -200 : 50,
+            loop: false,
+            duration: 0.5,
+            ease: [0.16, 1, 0.3, 1],
+          },
+        }}
+      />
       <Link
         className='absolute inset-0 z-10 flex items-center justify-center gap-2 text-lg font-semibold text-white mix-blend-difference lg:text-2xl'
         href={href}

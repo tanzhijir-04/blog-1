@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "analyze": "ANALYZE=true next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -16,7 +17,7 @@
     "dayjs": "^1.11.10",
     "lodash.upperfirst": "^4.3.1",
     "motion-wave": "^0.0.5",
-    "next": "14.2.2",
+    "next": "14.2.3",
     "p2-es": "^1.2.3",
     "react": "^18",
     "react-aria-components": "^1.1.1",
@@ -27,6 +28,7 @@
     "use-flip": "^1.0.0"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^14.2.3",
     "@octokit/core": "^6.1.2",
     "@react-aria/optimize-locales-plugin": "^1.0.2",
     "@shikijs/rehype": "^1.3.0",
@@ -43,7 +45,7 @@
     "@typescript-eslint/parser": "^7.7.0",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
-    "eslint-config-next": "14.2.2",
+    "eslint-config-next": "14.2.3",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-prettier": "^5.1.3",

@@ -11,16 +11,17 @@ export const ResumeText = () => {
       return
     }
     const typed = new Typed(ref.current, {
-      strings: ['ls Resume ^500', 'vim ^1000', 'cat Resume ^2000'],
+      strings: ['ls^100 resume ^500', 'vim ^1000', 'cat resume ^2000'],
       typeSpeed: 150,
       backSpeed: 100,
       backDelay: 200,
       loop: true,
+      cursorChar: '_',
     })
     return () => {
       typed.destroy()
     }
   }, [])
 
-  return <span ref={ref}>Resume</span>
+  return <span ref={ref}>resume</span>
 }

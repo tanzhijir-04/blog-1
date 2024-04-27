@@ -8,3 +8,6 @@ export const readingTime = (
 }
 
 export const isServer = () => typeof window === 'undefined'
+
+export const sleep = (ms: number) =>
+  new Promise(resolve => setTimeout(resolve, ms))

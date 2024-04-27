@@ -45,8 +45,8 @@ export default async function Page({ params }: PageProps) {
 
   return (
     <>
-      <main className='m-auto bg-[linear-gradient(to_bottom,transparent,var(--surface)_150px,var(--surface)_calc(100%_-_150px),transparent_100%)] px-4 py-28 max-xl:max-w-[80ch] md:px-0 xl:grid xl:grid-cols-[80ch_30ch] xl:justify-center'>
-        <header className='col-span-2 mb-24 w-fit space-y-8'>
+      <main className='m-auto grid grid-cols-[1fr_min(80ch,100%)_1fr] justify-center bg-[linear-gradient(to_bottom,transparent,var(--surface)_150px,var(--surface)_calc(100%_-_150px),transparent_100%)] px-4 py-28 md:px-8 xl:grid-cols-[80ch_30ch]'>
+        <header className='mb-24 w-fit space-y-8 max-xl:col-start-2 xl:col-span-2'>
           <small>{dayjs(createdAt).format('MMMM D, YYYY')}</small>
           <h1 className='text-5xl'>{title}</h1>
           <div className='flex items-center justify-between text-sm text-color-3'>
@@ -68,7 +68,7 @@ export default async function Page({ params }: PageProps) {
             </span>
           </div>
         </header>
-        <article className='prose prose-slate max-w-none prose-code:break-words'>
+        <article className='prose prose-slate max-w-none prose-code:break-words prose-pre:-ml-4 prose-pre:-mr-4 max-xl:col-start-2 md:prose-pre:-ml-8 md:prose-pre:-mr-8'>
           <Markdown source={body!} />
           <GiscusScript number={number} />
         </article>

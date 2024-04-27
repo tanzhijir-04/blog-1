@@ -1,6 +1,8 @@
 import optimizeLocales from '@react-aria/optimize-locales-plugin'
+import withBundleAnalyzer from '@next/bundle-analyzer'
+
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+let nextConfig = {
   output: 'export',
   images: {
     unoptimized: true,
@@ -21,6 +23,10 @@ const nextConfig = {
     )
     return config
   },
+}
+
+if (process.env.ANALYZE === 'true') {
+  nextConfig = withBundleAnalyzer()(nextConfig)
 }
 
 export default nextConfig

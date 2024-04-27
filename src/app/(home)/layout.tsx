@@ -21,11 +21,11 @@ export default function Layout() {
         <Skills />
         <Pinned />
         <Font />
+        <Resume />
         <Tags />
         <Posts />
         <Github />
         <Juejin />
-        <Resume />
       </Grid>
     </>
   )

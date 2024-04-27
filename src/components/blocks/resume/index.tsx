@@ -1,3 +1,4 @@
+import dynamic from 'next/dynamic'
 import Link from 'next/link'
 
 import { IconTerminal } from '@tabler/icons-react'
@@ -5,7 +6,12 @@ import { tw } from 'tw-styled'
 
 import { Block } from '@/components/blocks/block'
 
-import { ResumeText } from './text'
+const ResumeText = dynamic(
+  () => import('./text').then(module => module.ResumeText),
+  {
+    loading: () => <span>Resume</span>,
+  },
+)
 
 export const Dot = tw.i`block h-3 w-3 rounded-full`
 

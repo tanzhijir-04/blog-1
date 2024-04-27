@@ -22,6 +22,7 @@ export const FontProvider = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     toggleFont(defaultFont)
+    // eslint-disable-next-line
   }, [])
 
   function toggleFont(next?: FontType) {
