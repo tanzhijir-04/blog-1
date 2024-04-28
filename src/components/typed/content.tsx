@@ -11,7 +11,7 @@ export const TypedContent = (props: TypedChildProps) => {
 
     const id = window.setTimeout(() => {
       onRendered?.()
-    }, 500)
+    }, 1500)
     return () => {
       window.clearTimeout(id)
     }

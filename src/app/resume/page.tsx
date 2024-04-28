@@ -52,7 +52,7 @@ export default function Page() {
                 technology stack.
               </p>
             </TypedContent>
-            <TypedText delay={1000}>ls</TypedText>
+            <TypedText afterDelay={1000}>ls</TypedText>
             <TypedContent>
               <div className='grid grid-cols-2 gap-2 px-4 font-semibold text-sky-500'>
                 <span>opensource</span>
@@ -63,7 +63,7 @@ export default function Page() {
                 <span>contact</span>
               </div>
             </TypedContent>
-            <TypedText>opensource</TypedText>
+            <TypedText afterDelay={700}>opensource</TypedText>
             <TypedContent>
               <p>
                 I am passionate about contributing to the open-source community,
@@ -77,7 +77,7 @@ export default function Page() {
                 downloads.
               </p>
             </TypedContent>
-            <TypedText>projects</TypedText>
+            <TypedText afterDelay={1000}>projects</TypedText>
             <TypedContent>
               <ul>
                 <li>

@@ -13,6 +13,7 @@
     "@formkit/auto-animate": "^0.8.1",
     "@giscus/react": "^3.0.0",
     "@tabler/icons-react": "^3.2.0",
+    "@vercel/speed-insights": "^1.0.10",
     "clsx": "^2.1.0",
     "dayjs": "^1.11.10",
     "lodash.upperfirst": "^4.3.1",

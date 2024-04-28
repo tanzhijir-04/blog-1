@@ -9,12 +9,18 @@ import { sleep } from '@/utils'
 import type { TypedChildProps } from './typed'
 
 export interface TypedTextProps extends TypedChildProps {
-  immediately?: boolean
-  delay?: number
+  beforeDelay?: number
+  afterDelay?: number
 }
 
 export const TypedText = (props: TypedTextProps) => {
-  const { children, active, delay = 500, onRendered, immediately } = props
+  const {
+    children,
+    active,
+    beforeDelay = 500,
+    afterDelay = 500,
+    onRendered,
+  } = props
   const ref = useRef<HTMLElement | null>(null)
   const isServer = useIsServer()
 
@@ -37,16 +43,16 @@ export const TypedText = (props: TypedTextProps) => {
       id = window.setInterval(() => {
         if (!ref.current || index === stringArr.length) {
           window.clearInterval(id)
-          sleep(delay).then(onRendered)
+          sleep(afterDelay).then(onRendered)
           return
         }
         ref.current.innerText += stringArr[index++]
       }, 150)
     }
-    if (immediately) {
-      typed()
+    if (beforeDelay) {
+      sleep(beforeDelay).then(typed)
     } else {
-      sleep(1000).then(typed)
+      typed()
     }
     return () => {
       cancel = true
@@ -67,8 +73,7 @@ export const TypedText = (props: TypedTextProps) => {
   return (
     <p
       className={clsx('flex items-center gap-1', {
-        // prettier-ignore
-        'after:content-["\u2588"]': active,
+        'after:content-["█"]': active,
         'font-bold italic': !active,
       })}
     >
