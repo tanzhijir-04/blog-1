@@ -38,18 +38,18 @@ export default function Page() {
             <TypedText>whoami</TypedText>
             <TypedContent>
               <p>
-                Hi, this is <strong>ZHANG YU</strong>, in Chinese is{' '}
+                Hi, I'm <strong>ZHANG YU</strong>, in Chinese my name is{' '}
                 <strong>张宇</strong>.
               </p>
               <p>
-                I am a senior front-end engineer who has been involved in
+                I am a senior front-end engineer who have been involving in
                 front-end development since <strong>2018</strong>, focusing on
                 building aesthetically pleasing and highly interactive user
-                interfaces using <code>React</code>.
+                interfaces by <code>React</code>.
               </p>
               <p>
-                I have amassed substantial practical experience in the React
-                technology stack.
+                I have amassed substantial practical experience in the{' '}
+                <code>React</code> technology stack.
               </p>
             </TypedContent>
             <TypedText afterDelay={1000}>ls</TypedText>
@@ -71,10 +71,9 @@ export default function Page() {
                 as <code>Ant Design</code>.
               </p>
               <p>
-                Additionally, I have developed and maintained several
-                open-source projects of my own, which have been successfully
-                published on npm and collectively garnered nearly <i>20,000</i>{' '}
-                downloads.
+                Additionally, I have developed and maintained lots of
+                open-source projects, which have been successfully published on
+                npm and collectively garnered nearly <i>20,000</i> downloads.
               </p>
             </TypedContent>
             <TypedText afterDelay={1000}>projects</TypedText>
@@ -142,37 +141,37 @@ export default function Page() {
             <TypedText>blog-info</TypedText>
             <TypedContent>
               <p>
-                I am passionate about sharing knowledge, regularly writing
-                articles and tutorials covering <code>JavaScript</code>,
+                I am keen on sharing knowledge as well as writing articles and
+                tutorials regularly, covering <code>JavaScript</code>,
                 <code>TypeScript</code>, <code>React</code> source-code,{' '}
                 <code>CSS</code>, and animation.
               </p>
               <p>
-                My articles has garnered over <i>150,000</i> reads. Previously,
-                I primarily wrote in Chinese, but currently, my goal is to
-                writing English blog posts.
+                My articles have been read over <i>150,000</i> times.
+                Previously, I primarily wrote in Chinese, but currently, my goal
+                is to write articles in English.
               </p>
             </TypedContent>
             <TypedText>experience</TypedText>
             <TypedContent>
-              <p>Until now, I have only worked for two companies.</p>
+              <p>Until now, I have worked for two companies only.</p>
               <p>
                 The first company focused on developing high-performance and
                 versatile dialing systems and management platforms for internal
-                enterprise use, along with various mini-programs and apps.
+                enterprise use, along with various mini-programs and Apps.
               </p>
               <p>
                 The second company specialized in creating visually appealing
-                and high-performance e-commerce platforms and App for
+                and high-performance e-commerce platforms and Apps for
                 cross-border trade.
               </p>
             </TypedContent>
             <TypedText>skills</TypedText>
             <TypedContent>
               <p>
-                I am fluent in <code>JavaScript</code> and{' '}
-                <code>TypeScript</code>, proficient in using <code>CSS</code> to
-                create visually appealing and responsive web pages.
+                I excel in <code>JavaScript</code> and <code>TypeScript</code>,
+                proficiently utilizing <code>CSS</code> to create visually
+                appealing and responsive web pages.
               </p>
               <p>
                 I have a deep understanding of <code>React</code> and have
@@ -186,7 +185,7 @@ export default function Page() {
                 <code>NestJS</code>, and <code>GraphQL</code>.
               </p>
               <p>
-                Furthermore, I have experience in mobile app development using
+                Furthermore, I have experience in mobile App development using
                 <code>React Native</code> and <code>SwiftUI</code>.
               </p>
             </TypedContent>
