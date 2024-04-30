@@ -230,7 +230,7 @@ export const Galton = memo<GaltonProps>(props => {
       )}
       <div
         ref={ref}
-        className='animation-fade-in relative origin-bottom-left opacity-0 sm:max-lg:scale-50 md:max-lg:scale-x-[0.643] md:max-lg:scale-y-[0.635] lg:max-xl:scale-x-[0.786] lg:max-xl:scale-y-[0.784]'
+        className='animation-fade-in relative origin-bottom-left opacity-0 max-sm:scale-x-[1.057] max-sm:scale-y-[1.027] sm:max-lg:scale-50 md:max-lg:scale-x-[0.643] md:max-lg:scale-y-[0.635] lg:max-xl:scale-x-[0.786] lg:max-xl:scale-y-[0.784]'
       >
         <Pin className='left-[70px] top-10' />
         <Pin className='left-[140px] top-10' />

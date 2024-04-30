@@ -27,11 +27,11 @@ export const Resume = () => (
       <Dot className='bg-green-500' />
     </span>
     <Link
-      className='flex h-full w-full items-center justify-center text-2xl text-gray-200'
+      className='flex h-full w-full items-center justify-center text-lg text-gray-200 md:text-2xl'
       aria-label='Go to resume page'
       href='/resume'
     >
-      <IconTerminal className='mr-2 size-6 text-green-400' />
+      <IconTerminal className='mr-2 size-4 text-green-400 md:size-6' />
       <ResumeText />
     </Link>
   </Block>

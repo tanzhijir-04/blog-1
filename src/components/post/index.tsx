@@ -22,7 +22,7 @@ export const Post = (props: PostProps) => {
     >
       <div className='row-span-4 grid grid-rows-subgrid gap-2'>
         <Link
-          className='relative flex items-center text-balance text-lg font-bold md:text-base lg:text-lg xl:text-xl'
+          className='relative flex items-center text-balance text-base font-bold lg:text-lg xl:text-xl'
           aria-label={`Post ${node.title}`}
           href={`/posts/${number}`}
         >
@@ -51,7 +51,7 @@ export const Post = (props: PostProps) => {
         </p>
         {/* TODO Open AI*/}
         <p className='overflow-hidden text-pretty' />
-        <p className='flex justify-end'>
+        <p className='flex justify-end max-lg:hidden'>
           <Link
             className='translate-y-2 items-center rounded-full border bg-surface px-2.5 py-1.5 font-semibold opacity-0 outline-offset-4 ring-surface-3 transition-all duration-700 ease-out hover:scale-105 hover:border-transparent hover:ring-4 group-hover:translate-y-0 group-hover:opacity-100 focus-visible:translate-y-0 focus-visible:opacity-100'
             aria-label={`Read more about ${node.title}`}

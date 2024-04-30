@@ -68,7 +68,7 @@ export const Nav = () => {
             <li
               key={`${name}-${index}`}
               className={clsx(
-                'px-4 py-1 transition-colors duration-1000 ease-out',
+                'px-2.5 py-1 transition-colors duration-1000 ease-out sm:px-4',
                 tab === currentSelected ? 'text-orange-600' : 'text-color-3',
               )}
               aria-label={tab}
