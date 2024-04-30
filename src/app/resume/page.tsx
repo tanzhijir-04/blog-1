@@ -2,13 +2,21 @@ import Link from 'next/link'
 
 import { IconX } from '@tabler/icons-react'
 import dayjs from 'dayjs'
-import { type Metadata } from 'next'
+import { type Metadata, type Viewport } from 'next'
 
 import { Dot } from '@/components/blocks/resume'
 import { Typed, TypedContent, TypedText } from '@/components/typed'
 
 export const metadata: Metadata = {
   title: 'Resume',
+}
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#282935' },
+    { media: '(prefers-color-scheme: dark)', color: '#282935' },
+  ],
+  colorScheme: 'only light',
 }
 
 export default function Page() {
