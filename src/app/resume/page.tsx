@@ -46,7 +46,7 @@ export default function Page() {
             <TypedText>whoami</TypedText>
             <TypedContent>
               <p>
-                Hi, I'm <strong>ZHANG YU</strong>, in Chinese my name is{' '}
+                Hi, I&apos;m <strong>ZHANG YU</strong>, in Chinese my name is{' '}
                 <strong>张宇</strong>.
               </p>
               <p>

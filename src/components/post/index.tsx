@@ -1,6 +1,11 @@
+import { readFile, writeFile } from 'node:fs/promises'
+import { join } from 'node:path'
+
 import Link from 'next/link'
 
 import { IconHash } from '@tabler/icons-react'
+
+import { createSummary } from '@/service/summary'
 
 import { Block } from '../blocks/block'
 
@@ -10,19 +15,34 @@ interface PostProps {
   node: Discussion
 }
 
-export const Post = (props: PostProps) => {
+export const Post = async (props: PostProps) => {
   const { node } = props
-  const { labels, number } = node
+  const { labels, number, bodyText } = node
   const firstLabel = labels.nodes[0]
+
+  const cwd = process.cwd()
+  const summaryFilePath = join(cwd, 'summary.json')
+  const summaryJson = await getSummaryJson(summaryFilePath)
+
+  const currentSummary = summaryJson[number]
+
+  if (!currentSummary && bodyText && process.env.NODE_ENV === 'development') {
+    const result = await createSummary(bodyText)
+    if (result) {
+      const newSummaryJson = await getSummaryJson(summaryFilePath)
+      newSummaryJson[number] = result
+      await writeFile(summaryFilePath, JSON.stringify(newSummaryJson, null, 2))
+    }
+  }
 
   return (
     <Block
       data-type='posts'
-      className='group grid grid-rows-[1fr_auto_2fr_auto] bg-gradient-to-b from-surface-1 to-white max-md:row-span-2 max-sm:col-span-2 max-sm:row-span-1'
+      className='group grid grid-rows-[1fr_auto_2fr] bg-gradient-to-b from-surface-1 to-white max-lg:p-2 max-md:row-span-2 max-sm:col-span-2 max-sm:row-span-1 xl:grid-rows-[1fr_auto_2fr_auto]'
     >
-      <div className='row-span-4 grid grid-rows-subgrid gap-2'>
+      <div className='row-span-4 grid grid-rows-subgrid gap-1 xl:gap-2'>
         <Link
-          className='relative flex items-center text-balance text-base font-bold lg:text-lg xl:text-xl'
+          className='relative flex items-center text-balance text-sm font-bold lg:text-base xl:text-xl'
           aria-label={`Post ${node.title}`}
           href={`/posts/${number}`}
         >
@@ -36,7 +56,7 @@ export const Post = (props: PostProps) => {
             )}
           </h2>
         </Link>
-        <p className='mt-2 flex flex-wrap items-center text-color-2'>
+        <p className='mt-1 overflow-hidden text-ellipsis whitespace-nowrap text-color-2'>
           {labels.nodes.map(node => (
             <Link
               key={node.id}
@@ -49,9 +69,8 @@ export const Post = (props: PostProps) => {
             </Link>
           ))}
         </p>
-        {/* TODO Open AI*/}
-        <p className='overflow-hidden text-pretty' />
-        <p className='flex justify-end max-lg:hidden'>
+        <p className='overflow-hidden text-xs xl:text-sm'>{currentSummary}</p>
+        <p className='flex justify-end max-xl:hidden'>
           <Link
             className='translate-y-2 items-center rounded-full border bg-surface px-2.5 py-1.5 font-semibold opacity-0 outline-offset-4 ring-surface-3 transition-all duration-700 ease-out hover:scale-105 hover:border-transparent hover:ring-4 group-hover:translate-y-0 group-hover:opacity-100 focus-visible:translate-y-0 focus-visible:opacity-100'
             aria-label={`Read more about ${node.title}`}
@@ -63,4 +82,9 @@ export const Post = (props: PostProps) => {
       </div>
     </Block>
   )
+}
+
+async function getSummaryJson(path: string) {
+  const fileContent = await readFile(path, 'utf-8')
+  return JSON.parse(fileContent)
 }
