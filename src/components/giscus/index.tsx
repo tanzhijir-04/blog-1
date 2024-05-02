@@ -19,7 +19,7 @@ export function GiscusScript(props: GiscusScriptProps) {
         emitMetadata='0'
         inputPosition='top'
         lang='en'
-        theme='light'
+        theme='preferred_color_scheme'
       />
     </div>
   )

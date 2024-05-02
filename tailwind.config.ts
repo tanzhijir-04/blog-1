@@ -11,8 +11,12 @@ const config: Config = {
     './src/markdown/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  // darkMode: 'class', TODO
   theme: {
     extend: {
+      borderColor: {
+        DEFAULT: 'var(--border)',
+      },
       colors: {
         brand: 'var(--brand)',
         'color-1': 'var(--text-1)',
@@ -30,6 +34,7 @@ const config: Config = {
       },
       backgroundImage: ({ theme }) => ({
         paper: `linear-gradient(90deg, transparent 0%, transparent 5%, ${theme('colors.orange.600')} 5%, ${theme('colors.orange.600')} calc(5% + 2px), transparent calc(5% + 2px), transparent 100%), linear-gradient(180deg, white 56px, transparent 56px), repeating-linear-gradient(180deg, ${theme('colors.sky.500')} 0px, ${theme('colors.sky.500')} 2px, transparent 2px, transparent 32px), linear-gradient(white,white);`,
+        'paper-dark': `linear-gradient(90deg, transparent 0%, transparent 5%, ${theme('colors.zinc.500')} 5%, ${theme('colors.zinc.500')} calc(5% + 2px), transparent calc(5% + 2px), transparent 100%), linear-gradient(180deg, ${theme('colors.gray.900')} 56px, transparent 56px), repeating-linear-gradient(180deg, ${theme('colors.zinc.700')} 0px, ${theme('colors.zinc.700')} 2px, transparent 2px, transparent 32px), linear-gradient(${theme('colors.gray.900')},${theme('colors.gray.900')});`,
       }),
       fontFamily: {
         sans: [

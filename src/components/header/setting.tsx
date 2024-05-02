@@ -14,7 +14,7 @@ export const Setting = () => {
   return (
     <Link
       className={clsx(
-        'justify-self-end rounded-full bg-surface-2 p-1 shadow-inner transition-all max-sm:hidden',
+        'justify-self-end rounded-full bg-surface-2 p-1 shadow-inner transition-all max-sm:hidden dark:bg-surface-1',
       )}
       aria-label='Setting'
       href='/setting'
@@ -23,7 +23,7 @@ export const Setting = () => {
         className={clsx(
           'size-8 rounded-full p-1.5 transition-all duration-1000 ease-out',
           tab === 'setting'
-            ? 'bg-surface text-brand shadow-sm'
+            ? 'bg-surface text-brand shadow-sm dark:bg-surface-2'
             : 'text-color-3',
         )}
       />

@@ -17,7 +17,7 @@ const Hello = ({ children }) => {
         <MessageLoadingDot className='animation-delay-[0.666s]' />
         <MessageLoadingDot className='animation-delay-[1.332s]' />
       </Message>
-      <Message className='animation-fade-in px-6 font-normal text-white opacity-0 !animation-delay-[3s] before:-left-2 before:bottom-0 before:block before:h-6 before:w-6 before:rounded-br-3xl before:bg-[#30db5b] after:-left-3 after:bottom-0 after:h-6 after:w-3 after:rounded-br-2xl after:bg-white'>
+      <Message className='animation-fade-in px-6 font-normal text-white opacity-0 !animation-delay-[3s] before:-bottom-px before:-left-2 before:block before:h-6 before:w-6 before:rounded-br-3xl before:bg-[#30db5b] after:-bottom-px after:-left-3 after:h-6 after:w-3 after:rounded-br-2xl after:bg-white dark:after:bg-surface-1'>
         {text}
       </Message>
     </>

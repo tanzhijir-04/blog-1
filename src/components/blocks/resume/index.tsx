@@ -19,9 +19,9 @@ export const Resume = () => (
   <Block
     data-type='about'
     tabIndex={0}
-    className='overflow-clip bg-[#282935] !p-0 outline-offset-4 transition-transform hover:scale-105'
+    className='overflow-clip bg-[#282935] !p-0 outline-offset-4 transition-transform hover:scale-105 dark:bg-surface-1'
   >
-    <span className='absolute left-0 right-0 top-0 flex gap-2 border-b-black bg-slate-700 px-6 py-3'>
+    <span className='absolute left-0 right-0 top-0 flex gap-2 border-b-black bg-slate-700 px-6 py-3 dark:bg-surface-2'>
       <Dot className='bg-red-500' />
       <Dot className='bg-yellow-400' />
       <Dot className='bg-green-500' />

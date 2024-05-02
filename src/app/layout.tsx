@@ -32,9 +32,9 @@ const handwriting = Handlee({
 export const viewport: Viewport = {
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#000212' },
   ],
-  colorScheme: 'only light',
+  colorScheme: 'light dark',
 }
 
 export const metadata: Metadata = {
@@ -104,8 +104,8 @@ export default function RootLayout({ children }) {
           href='/icon/android-chrome-512x512.png'
         />
       </head>
-      <body className='font-primary text-color-1'>
-        <div className='fixed inset-0 bottom-1/4 -z-10 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]' />
+      <body className='bg-surface font-primary text-color-1'>
+        <div className='fixed inset-0 bottom-1/4 -z-10 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] bg-[length:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)] dark:hidden' />
         <Provider>{children}</Provider>
         <SpeedInsights />
       </body>

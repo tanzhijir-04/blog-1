@@ -7,6 +7,7 @@ import { TOC } from 'react-markdown-toc/server'
 import { GiscusScript } from '@/components/giscus'
 import { Markdown } from '@/markdown'
 import { queryAllPosts, queryByNumber } from '@/service'
+import { getSummary } from '@/service/summary'
 import { readingTime } from '@/utils'
 
 export const generateStaticParams = async () => {
@@ -23,9 +24,12 @@ export const generateMetadata = async ({ params }: PageProps) => {
   const { discussion } = repository!
   const { title } = discussion!
 
-  // TODO description AI generated, og, twitter
+  // TODO og, twitter
+  const summery = await getSummary()
+  const description = summery[id]
   return {
     title,
+    description,
   }
 }
 
@@ -68,7 +72,7 @@ export default async function Page({ params }: PageProps) {
             </span>
           </div>
         </header>
-        <article className='prose prose-slate max-w-none prose-code:break-words prose-pre:-ml-4 prose-pre:-mr-4 max-xl:col-start-2 md:prose-pre:-ml-8 md:prose-pre:-mr-8'>
+        <article className='prose prose-slate max-w-none dark:prose-invert prose-code:break-words prose-pre:-ml-4 prose-pre:-mr-4 max-xl:col-start-2 md:prose-pre:-ml-8 md:prose-pre:-mr-8'>
           <Markdown source={body!} />
           <GiscusScript number={number} />
         </article>
@@ -78,9 +82,9 @@ export default async function Page({ params }: PageProps) {
           </h2>
           <TOC
             markdown={body!}
-            className='space-y-3'
+            className='space-y-3 dark:text-color-4'
             ul='pl-6 space-y-2'
-            a='data-[active=true]:text-brand block text-sm mb-2'
+            a='data-[active=true]:text-brand dark:data-[active=true]:text-white block text-sm mb-2'
           />
         </aside>
       </main>

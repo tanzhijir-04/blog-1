@@ -51,7 +51,10 @@ export async function Markdown(props: MarkdownProps) {
               themes: Object.keys(bundledThemes),
               langs: Object.keys(bundledLanguages),
             }),
-            theme: 'github-light',
+            themes: {
+              light: 'github-light',
+              dark: 'dracula-soft',
+            },
             transformers: [
               transformerNotationDiff(),
               transformerNotationHighlight(),

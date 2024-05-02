@@ -1,3 +1,6 @@
+import { readFile, writeFile } from 'node:fs/promises'
+import { join } from 'node:path'
+
 import OpenAI from 'openai'
 
 import { sleep } from '@/utils'
@@ -34,4 +37,16 @@ export async function createSummary(content: string) {
   queue.delete(promise)
   console.log(`task ${queue.size} done`)
   return result
+}
+
+const cwd = process.cwd()
+const summaryFilePath = join(cwd, 'summary.json')
+
+export async function getSummary() {
+  const fileContent = await readFile(summaryFilePath, 'utf-8')
+  return JSON.parse(fileContent)
+}
+
+export async function writeSummery(newSummery: unknown) {
+  await writeFile(summaryFilePath, JSON.stringify(newSummery, null, 2))
 }

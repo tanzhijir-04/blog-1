@@ -1,11 +1,8 @@
-import { readFile, writeFile } from 'node:fs/promises'
-import { join } from 'node:path'
-
 import Link from 'next/link'
 
 import { IconHash } from '@tabler/icons-react'
 
-import { createSummary } from '@/service/summary'
+import { createSummary, getSummary, writeSummery } from '@/service/summary'
 
 import { Block } from '../blocks/block'
 
@@ -20,25 +17,23 @@ export const Post = async (props: PostProps) => {
   const { labels, number, bodyText } = node
   const firstLabel = labels.nodes[0]
 
-  const cwd = process.cwd()
-  const summaryFilePath = join(cwd, 'summary.json')
-  const summaryJson = await getSummaryJson(summaryFilePath)
+  const summaryJson = await getSummary()
 
   const currentSummary = summaryJson[number]
 
   if (!currentSummary && bodyText && process.env.NODE_ENV === 'development') {
     const result = await createSummary(bodyText)
     if (result) {
-      const newSummaryJson = await getSummaryJson(summaryFilePath)
+      const newSummaryJson = await getSummary()
       newSummaryJson[number] = result
-      await writeFile(summaryFilePath, JSON.stringify(newSummaryJson, null, 2))
+      await writeSummery(newSummaryJson)
     }
   }
 
   return (
     <Block
       data-type='posts'
-      className='group grid grid-rows-[1fr_auto_2fr] bg-gradient-to-b from-surface-1 to-white max-lg:p-2 max-md:row-span-2 max-sm:col-span-2 max-sm:row-span-1 xl:grid-rows-[1fr_auto_2fr_auto]'
+      className='group grid grid-rows-[1fr_min-content_2fr] bg-gradient-to-b from-surface-1 to-white max-lg:p-2 max-md:row-span-2 max-sm:col-span-2 max-sm:row-span-1 xl:grid-rows-[1fr_min-content_2fr_auto] dark:bg-[linear-gradient(rgba(255,255,255,0.05)_0%,rgba(255,255,255,0)_100%)]'
     >
       <div className='row-span-4 grid grid-rows-subgrid gap-1 xl:gap-2'>
         <Link
@@ -69,7 +64,7 @@ export const Post = async (props: PostProps) => {
             </Link>
           ))}
         </p>
-        <p className='overflow-hidden text-xs xl:text-sm'>{currentSummary}</p>
+        <p className='text-xs xl:text-sm dark:text-color-4'>{currentSummary}</p>
         <p className='flex justify-end max-xl:hidden'>
           <Link
             className='translate-y-2 items-center rounded-full border bg-surface px-2.5 py-1.5 font-semibold opacity-0 outline-offset-4 ring-surface-3 transition-all duration-700 ease-out hover:scale-105 hover:border-transparent hover:ring-4 group-hover:translate-y-0 group-hover:opacity-100 focus-visible:translate-y-0 focus-visible:opacity-100'
@@ -82,9 +77,4 @@ export const Post = async (props: PostProps) => {
       </div>
     </Block>
   )
-}
-
-async function getSummaryJson(path: string) {
-  const fileContent = await readFile(path, 'utf-8')
-  return JSON.parse(fileContent)
 }

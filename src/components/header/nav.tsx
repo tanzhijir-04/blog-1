@@ -49,10 +49,10 @@ export const Nav = () => {
   const [left, width] = currentPos ?? prevPos ?? []
 
   return (
-    <nav className='relative justify-self-center rounded-full bg-surface-2 p-1.5 shadow-inner'>
+    <nav className='relative justify-self-center rounded-full bg-surface-2 p-1.5 shadow-inner dark:bg-surface-1'>
       <div
         className={clsx(
-          'absolute inset-y-1.5 left-1.5 rounded-full bg-surface shadow-sm transition-all duration-1000 ease-out',
+          'absolute inset-y-1.5 left-1.5 rounded-full bg-surface shadow-sm transition-all duration-1000 ease-out dark:bg-surface-2',
           hidden ? 'opacity-0' : 'opacity-100',
         )}
         style={{
@@ -69,7 +69,7 @@ export const Nav = () => {
               key={`${name}-${index}`}
               className={clsx(
                 'px-2.5 py-1 transition-colors duration-1000 ease-out sm:px-4',
-                tab === currentSelected ? 'text-orange-600' : 'text-color-3',
+                tab === currentSelected ? 'text-brand' : 'text-color-3',
               )}
               aria-label={tab}
               data-name={tab}

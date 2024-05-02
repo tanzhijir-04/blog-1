@@ -19,9 +19,9 @@ export const Pinned = async () => {
   return (
     <Block
       data-type='projects'
-      className='z-10 col-span-2 row-span-5 flex flex-col border-none bg-paper p-0 font-handwriting shadow-md sm:col-span-3 sm:row-span-4 md:row-span-2 xl:col-span-2'
+      className='z-10 col-span-2 row-span-5 flex flex-col border-none bg-paper !p-0 font-handwriting shadow-md sm:col-span-3 sm:row-span-4 md:row-span-2 xl:col-span-2 dark:bg-paper-dark'
     >
-      <h2 className='flex items-center gap-2 pl-[10%] pt-4 text-2xl font-bold text-orange-600 xl:pt-6'>
+      <h2 className='flex items-center gap-2 pl-[10%] pt-4 text-2xl font-bold text-brand xl:pt-6'>
         <IconPinFilled className='size-6' />
         Pinned
       </h2>
@@ -40,7 +40,7 @@ export const Pinned = async () => {
             >
               <div
                 className={clsx(
-                  'absolute inset-0 z-10 bg-yellow-100 shadow-[0_0_5px_rgba(0,0,0,.5)] transition-transform duration-500 group-hover/note:scale-[1.03]',
+                  'absolute inset-0 z-10 bg-yellow-100 shadow-[0_0_5px_rgba(0,0,0,.5)] transition-transform duration-500 group-hover/note:scale-[1.03] dark:bg-slate-800',
                   round && 'rounded-[0_0_90px_90px/0_0_20px_20px]',
                 )}
               />
