@@ -70,21 +70,16 @@
     }
   }
 
-  .filter-noise {
-    filter: var(--noise-3);
-  }
-
   .animation-hello {
-    animation: hello 3s infinite;
-    animation-timing-function: var(--ease-in-out-3);
+    animation: hello 3s infinite ease;
   }
 
   .animation-fade-in {
-    animation: var(--animation-fade-in) forwards;
+    animation: fade-in 0.5s ease forwards;
   }
 
   .animation-fade-out {
-    animation: var(--animation-fade-out) forwards;
+    animation: fade-out 0.5s ease forwards;
   }
 
   .animation-breath {
