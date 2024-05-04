@@ -1,6 +1,7 @@
 'use client'
 
 import Giscus from '@giscus/react'
+import { useTheme } from 'next-themes'
 
 interface GiscusScriptProps {
   number: number
@@ -8,6 +9,8 @@ interface GiscusScriptProps {
 
 export function GiscusScript(props: GiscusScriptProps) {
   const { number } = props
+  const { theme } = useTheme()
+
   return (
     <div className='mt-32'>
       <Giscus
@@ -19,7 +22,7 @@ export function GiscusScript(props: GiscusScriptProps) {
         emitMetadata='0'
         inputPosition='top'
         lang='en'
-        theme='preferred_color_scheme'
+        theme={theme === 'dark' ? 'dark' : 'light'}
       />
     </div>
   )

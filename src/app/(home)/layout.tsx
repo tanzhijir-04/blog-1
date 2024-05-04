@@ -8,6 +8,7 @@ import { Posts } from '@/components/blocks/posts'
 import { Resume } from '@/components/blocks/resume'
 import { Skills } from '@/components/blocks/skills'
 import { Tags } from '@/components/blocks/tags'
+import { ThemeToggle } from '@/components/blocks/theme-toggle'
 import { Grid } from '@/components/grid'
 import { Header } from '@/components/header'
 
@@ -22,6 +23,7 @@ export default function Layout() {
         <Pinned />
         <Font />
         <Resume />
+        <ThemeToggle />
         <Tags />
         <Posts />
         <Github />

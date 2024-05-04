@@ -7,7 +7,7 @@ export const Juejin = () => (
     className='group flex items-center justify-center bg-gradient-to-b from-blue-200 to-white text-black dark:from-blue-300/80 dark:to-white/70'
   >
     <svg
-      className='size-24 xl:size-32 dark:grayscale-[20%]'
+      className='size-24 dark:grayscale-[20%] xl:size-32'
       width='1em'
       height='1em'
       viewBox='0 0 38 38'

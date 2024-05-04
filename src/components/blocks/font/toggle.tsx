@@ -23,7 +23,7 @@ export const Toggle = () => {
         className={cn(
           'relative h-6 w-12 rounded-lg border shadow-inner transition-colors duration-500 before:absolute before:inset-y-0.5 before:left-0 before:w-4 before:translate-x-0.5 before:rounded-md before:bg-surface before:shadow before:transition-all before:duration-500 before:content-["_"] dark:border-gray-500 dark:before:bg-surface-4',
           font === 'serif' &&
-            'bg-blue-400 before:!translate-x-7 before:rotate-180 dark:bg-blue-800',
+            'bg-blue-400 before:!translate-x-7 before:rotate-180 dark:bg-gray-700',
         )}
         isSelected={font === 'serif'}
       />

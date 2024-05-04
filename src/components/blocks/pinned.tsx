@@ -19,7 +19,7 @@ export const Pinned = async () => {
   return (
     <Block
       data-type='projects'
-      className='z-10 col-span-2 row-span-5 flex flex-col border-none bg-paper !p-0 font-handwriting shadow-md sm:col-span-3 sm:row-span-4 md:row-span-2 xl:col-span-2 dark:bg-paper-dark'
+      className='z-10 col-span-2 row-span-5 flex flex-col border-none bg-paper !p-0 font-handwriting shadow-md dark:bg-paper-dark sm:col-span-3 sm:row-span-4 md:row-span-2 xl:col-span-2'
     >
       <h2 className='flex items-center gap-2 pl-[10%] pt-4 text-2xl font-bold text-brand xl:pt-6'>
         <IconPinFilled className='size-6' />

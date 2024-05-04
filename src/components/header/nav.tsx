@@ -52,7 +52,7 @@ export const Nav = () => {
     <nav className='relative justify-self-center rounded-full bg-surface-2 p-1.5 shadow-inner dark:bg-surface-1'>
       <div
         className={clsx(
-          'absolute inset-y-1.5 left-1.5 rounded-full bg-surface shadow-sm transition-all duration-1000 ease-out dark:bg-surface-2',
+          'absolute inset-y-1.5 left-1.5 rounded-full bg-surface shadow-sm transition-[opacity,transform] duration-1000 ease-out dark:bg-surface-2',
           hidden ? 'opacity-0' : 'opacity-100',
         )}
         style={{

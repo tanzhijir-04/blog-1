@@ -11,7 +11,7 @@ const config: Config = {
     './src/markdown/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  // darkMode: 'class', TODO
+  darkMode: 'class',
   theme: {
     extend: {
       borderColor: {

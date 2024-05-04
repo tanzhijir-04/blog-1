@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { clsx } from 'clsx'
 
 import { FontToggle } from './font-toggle'
+import { ThemeToggle } from './theme-toggle'
 
 interface HeaderProps {
   sticky?: boolean
@@ -30,8 +31,9 @@ export const Header = (props: HeaderProps) => {
           Posts
         </Link>
       </nav>
-      <div className='flex items-center justify-end'>
+      <div className='flex items-center justify-end gap-2'>
         <FontToggle />
+        <ThemeToggle />
       </div>
     </header>
   )
