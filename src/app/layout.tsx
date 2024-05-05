@@ -1,6 +1,6 @@
 import { clsx } from 'clsx'
+import { DarkToggleProvider, DarkToggleScript } from 'dark-toggle/react'
 import { Nunito, Handlee, Sorts_Mill_Goudy } from 'next/font/google'
-import { ThemeProvider } from 'next-themes'
 
 import { Provider } from '@/provider'
 
@@ -104,11 +104,12 @@ export default function RootLayout({ children }) {
           sizes='512x512'
           href='/icon/android-chrome-512x512.png'
         />
+        <DarkToggleScript />
       </head>
       <body className='bg-surface font-primary text-color-1'>
         <div className='fixed inset-0 bottom-1/4 -z-10 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] bg-[length:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)] dark:hidden' />
         <Provider>
-          <ThemeProvider attribute='class'>{children}</ThemeProvider>
+          <DarkToggleProvider>{children}</DarkToggleProvider>
         </Provider>
       </body>
     </html>

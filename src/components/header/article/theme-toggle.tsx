@@ -1,21 +1,24 @@
 'use client'
 
 import { IconCheck, IconSun, IconMoon } from '@tabler/icons-react'
-import { useTheme } from 'next-themes'
+import { type Theme } from 'dark-toggle'
+import { useDarkToggle } from 'dark-toggle/react'
 import { MenuTrigger } from 'react-aria-components'
 
 import { Menu, MenuItem, Button, Popover } from '@/components/ui'
 import { useIsServer } from '@/hooks/useIsServer'
 
 export const ThemeToggle = () => {
-  const { theme: currentTheme, setTheme } = useTheme()
+  const { isDark, theme, setTheme } = useDarkToggle()
   const isServer = useIsServer()
 
   if (isServer) {
     return null
   }
 
-  const Icon = currentTheme === 'dark' ? IconMoon : IconSun
+  const currentTheme: Theme = theme ?? 'system'
+
+  const Icon = isDark ? IconMoon : IconSun
   return (
     <MenuTrigger>
       <Button
@@ -28,12 +31,13 @@ export const ThemeToggle = () => {
         <Menu
           className='w-[130px]'
           onAction={theme => {
-            setTheme(theme as string)
+            setTheme(theme as Theme)
           }}
         >
           {[
             ['Light', 'light'],
             ['Dark', 'dark'],
+            ['System', 'system'],
           ].map(([name, theme]) => (
             <MenuItem key={theme} className='flex justify-between' id={theme}>
               {name}

@@ -1,7 +1,7 @@
 'use client'
 
 import Giscus from '@giscus/react'
-import { useTheme } from 'next-themes'
+import { useDarkToggle } from 'dark-toggle/react'
 
 interface GiscusScriptProps {
   number: number
@@ -9,7 +9,7 @@ interface GiscusScriptProps {
 
 export function GiscusScript(props: GiscusScriptProps) {
   const { number } = props
-  const { theme } = useTheme()
+  const { isDark } = useDarkToggle()
 
   return (
     <div className='mt-32'>
@@ -22,7 +22,7 @@ export function GiscusScript(props: GiscusScriptProps) {
         emitMetadata='0'
         inputPosition='top'
         lang='en'
-        theme={theme === 'dark' ? 'dark' : 'light'}
+        theme={isDark ? 'dark' : 'light'}
       />
     </div>
   )
