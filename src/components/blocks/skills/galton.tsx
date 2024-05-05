@@ -96,7 +96,7 @@ export const Galton = memo<GaltonProps>(props => {
         const img = document.createElement('img')
         container.appendChild(img)
         container.className =
-          'absolute top-0 left-0 dark:bg-white dark:grayscale-[20%] flex justify-center items-center border rounded-full bg-surface animation-fade-in opacity-0 shadow-sm'
+          'skill absolute top-0 left-0 dark:bg-white dark:grayscale-[20%] flex justify-center items-center border rounded-full bg-surface animation-fade-in opacity-0 shadow-sm'
         const containerWidth = imgContainerRadius * 2
         container.style.width = `${containerWidth}px`
         container.style.height = `${containerWidth}px`
