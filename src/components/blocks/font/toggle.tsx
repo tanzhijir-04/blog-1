@@ -21,7 +21,7 @@ export const Toggle = () => {
         aria-label='Font Toggle Switch'
         onChange={() => onToggle()}
         className={cn(
-          'relative h-6 w-12 rounded-lg border shadow-inner transition-colors duration-500 before:absolute before:inset-y-0.5 before:left-0 before:w-4 before:translate-x-0.5 before:rounded-md before:bg-surface before:shadow before:transition-all before:duration-500 before:content-["_"] dark:border-gray-500 dark:before:bg-surface-4',
+          'relative h-6 w-12 rounded-lg border shadow-inner duration-500 before:absolute before:inset-y-0.5 before:left-0 before:w-4 before:translate-x-0.5 before:rounded-md before:bg-surface before:shadow before:transition-transform before:duration-500 before:content-["_"] dark:border-gray-500 dark:before:bg-surface-4',
           font === 'serif' &&
             'bg-blue-400 before:!translate-x-7 before:rotate-180 dark:bg-gray-700',
         )}
