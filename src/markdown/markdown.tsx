@@ -10,15 +10,11 @@ import {
 } from '@shikijs/transformers'
 import { transformerTwoslash } from '@shikijs/twoslash'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+import { rehypeDefaultCodeLang } from 'rehype-default-code-lang'
 import rehypeSlug from 'rehype-slug'
 import remarkDirective from 'remark-directive'
 import remarkGfm from 'remark-gfm'
 import { MDX } from 'rsc-mdx'
-import {
-  bundledLanguages,
-  bundledThemes,
-  getHighlighter,
-} from 'shiki/bundle/full'
 
 import { CodeGroup, Alert, Details, Hello, pre } from './components'
 import { remarkDirectiveContainer, rehypeGithubAlert } from './plugins'
@@ -45,12 +41,14 @@ export async function Markdown(props: MarkdownProps) {
         rehypeSlug,
         rehypeAutolinkHeadings,
         [
+          rehypeDefaultCodeLang,
+          {
+            defaultLang: 'text',
+          },
+        ],
+        [
           rehypeShiki,
           {
-            highlighter: getHighlighter({
-              themes: Object.keys(bundledThemes),
-              langs: Object.keys(bundledLanguages),
-            }),
             themes: {
               light: 'github-light',
               dark: 'dracula-soft',
