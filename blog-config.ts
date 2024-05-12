@@ -1,2 +1,2 @@
 export const repoName = 'blog'
-export const repoOwner = 'zhangyu1818'
+export const repoOwner = 'tanzhijir-04'
